@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><title>Swift is like Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"></head><body><a target="_blank" href="https://github.com/Nilhcem/swift-is-like-kotlin"><img id="fork-me" src="http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png"></a><div id="note"><b>Swift is like Kotlin</b><br>Shamefully forked from <a href="http://repo.tiye.me/swift-is-like-go/" target="_blank">Swift is like Go</a></div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Hello World</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>println("Hello, world!")</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>println("Hello, world!")
+<!DOCTYPE html><html><head><title>Swift is like Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"></head><body><a target="_blank" href="https://github.com/Nilhcem/swift-is-like-kotlin"><img id="fork-me" src="http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png"></a><div id="note"><b>Swift is like Kotlin</b><br>Shamefully forked from <a href="http://repo.tiye.me/swift-is-like-go/" target="_blank">Swift is like Go</a></div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Hello World</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>print("Hello, world!")
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>println("Hello, world!")
 </code></pre></div></div></div><div class="case"><div class="name">Variables And Constants</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
 let myConstant = 42</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var myVariable = 42
@@ -19,13 +20,14 @@ val fruitSummary = "I have ${apples + oranges} " +
                    "pieces of fruit."
 </code></pre></div></div></div><div class="case"><div class="name">Range Operator</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let names = ["Anna", "Alex", "Brian", "Jack"]
 let count = names.count
-for i in 0..count {
-    println("Person \(i + 1) is called \(names[i])")
+for i in 0..&lt;count {
+    print("Person \(i + 1) is called \(names[i])")
 }
 // Person 1 is called Anna
 // Person 2 is called Alex
 // Person 3 is called Brian
-// Person 4 is called Jack</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val names = arrayOf("Anna", "Alex", "Brian", "Jack")
+// Person 4 is called Jack
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val names = arrayOf("Anna", "Alex", "Brian", "Jack")
 val count = names.count()
 for (i in 0..count - 1) {
     println("Person ${i + 1} is called ${names[i]}")
@@ -35,14 +37,14 @@ for (i in 0..count - 1) {
 // Person 3 is called Brian
 // Person 4 is called Jack
 </code></pre></div></div></div><div class="case"><div class="name">Inclusive Range Operator</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>for index in 1...5 {
-    println("\(index) times 5 is \(index * 5)")
+    print("\(index) times 5 is \(index * 5)")
 }
 // 1 times 5 is 5
 // 2 times 5 is 10
 // 3 times 5 is 15
 // 4 times 5 is 20
 // 5 times 5 is 25</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>for (index in 1..5) {
-    println("${index} times 5 is ${index * 5}")
+    println("$index times 5 is ${index * 5}")
 }
 // 1 times 5 is 5
 // 2 times 5 is 10
@@ -51,28 +53,27 @@ for (i in 0..count - 1) {
 // 5 times 5 is 25
 </code></pre></div></div></div></div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Arrays</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var shoppingList = ["catfish", "water",
     "tulips", "blue paint"]
-shoppingList[1] = "bottle of water"</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var shoppingList = arrayOf("catfish", "water",
+shoppingList[1] = "bottle of water"</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val shoppingList = arrayOf("catfish", "water",
     "tulips", "blue paint")
 shoppingList[1] = "bottle of water"
 </code></pre></div></div></div><div class="case"><div class="name">Maps</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var occupations = [
     "Malcolm": "Captain",
     "Kaylee": "Mechanic",
 ]
-occupations["Jayne"] = "Public Relations"</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var occupations = hashMapOf(
+occupations["Jayne"] = "Public Relations"</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val occupations = mutableMapOf(
     "Malcolm" to "Captain",
     "Kaylee" to "Mechanic"
 )
 occupations["Jayne"] = "Public Relations"
-</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let emptyArray = String[]()
-let emptyDictionary = Dictionary&lt;String, Float>()
-let emptyArrayNoType = []
+</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let emptyArray = [String]()
+let emptyDictionary = [String: Float]()
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String>()
 val emptyMap = mapOf&lt;String, Float>()
-val emptyArrayNoType = arrayOf&lt;Any>()
-</code></pre></div></div></div></div><div class="section"><div class="title">FUNCTIONS</div><div class="case"><div class="name">Functions</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func greet(name: String, day: String) -> String {
+</code></pre></div></div></div></div><div class="section"><div class="title">FUNCTIONS</div><div class="case"><div class="name">Functions</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func greet(_ name: String,_ day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
-greet("Bob", "Tuesday")</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun greet(name: String, day: String): String {
+greet("Bob", "Tuesday")
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun greet(name: String, day: String): String {
     return "Hello $name, today is $day."
 }
 greet("Bob", "Tuesday")
@@ -80,14 +81,15 @@ greet("Bob", "Tuesday")
     return (3.59, 3.69, 3.79)
 }</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(val a: Double, val b: Double, val c: Double)
 fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)
-</code></pre></div></div></div><div class="case"><div class="name">Variable Number Of Arguments</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func sumOf(numbers: Int...) -> Int {
+</code></pre></div></div></div><div class="case"><div class="name">Variable Number Of Arguments</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func sumOf(_ numbers: Int...) -> Int {
     var sum = 0
     for number in numbers {
         sum += number
     }
     return sum
 }
-sumOf(42, 597, 12)</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
+sumOf(42, 597, 12)
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
     var sum = 0
     for (number in numbers) {
         sum += number
@@ -104,28 +106,36 @@ fun sumOf(vararg numbers: Int) = numbers.sum()
     }
     return addOne
 }
-var increment = makeIncrementer()
-increment(7)</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun makeIncrementer(): (Int) -> Int {
+let increment = makeIncrementer()
+increment(7)
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun makeIncrementer(): (Int) -> Int {
     val addOne = fun(number: Int): Int {
         return 1 + number
     }
     return addOne
 }
-var increment = makeIncrementer()
+val increment = makeIncrementer()
 increment(7)
 
 // makeIncrementer() can also be written in a shorter way:
 fun makeIncrementer() = fun(number: Int) = 1 + number
-</code></pre></div></div></div><div class="case"><div class="name">Map</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var numbers = [20, 19, 7, 12]
-numbers.map({ number in 3 * number })</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var numbers = listOf(20, 19, 7, 12)
+</code></pre></div></div></div><div class="case"><div class="name">Map</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let numbers = [20, 19, 7, 12]
+numbers.map { 3 * $0 }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val numbers = listOf(20, 19, 7, 12)
 numbers.map { 3 * it }
-</code></pre></div></div></div><div class="case"><div class="name">Sort</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>sort([1, 5, 3, 12, 2]) { $0 > $1 }</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>listOf(1, 5, 3, 12, 2).sort()
-</code></pre></div></div></div><div class="case"><div class="name">Named Arguments</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>def area(width: Int, height: Int) -> Int {
+</code></pre></div></div></div><div class="case"><div class="name">Sort</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var mutableArray = [1, 5, 3, 12, 2]
+mutableArray.sort()
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>listOf(1, 5, 3, 12, 2).sorted()
+</code></pre></div></div></div><div class="case"><div class="name">Named Arguments</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func area(width: Int, height: Int) -> Int {
     return width * height
 }
+area(width: 2, height: 3)
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun area(width: Int, height: Int) = width * height
+area(width = 2, height = 3)
 
-area(width: 10, height: 10)</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun area(width: Int, height: Int) = width * height
-area(height = 10, width = 10)
+// This is also possible with named arguments
+area(2, height = 2)
+area(height = 3, width = 2)
 </code></pre></div></div></div></div><div class="section"><div class="title">CLASSES</div><div class="case"><div class="name">Declaration</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>class Shape {
     var numberOfSides = 0
     func simpleDescription() -> String {
@@ -142,7 +152,7 @@ shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 </code></pre></div></div></div><div class="case"><div class="name">Subclass</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>class NamedShape {
     var numberOfSides: Int = 0
-    var name: String
+    let name: String
 
     init(name: String) {
         self.name = name
@@ -159,7 +169,7 @@ class Square: NamedShape {
     init(sideLength: Double, name: String) {
         self.sideLength = sideLength
         super.init(name: name)
-        numberOfSides = 4
+        self.numberOfSides = 4
     }
 
     func area() -> Double {
@@ -171,16 +181,16 @@ class Square: NamedShape {
     }
 }
 
-let test = Square(sideLength: 5.2)
+let test = Square(sideLength: 5.2, name: "square")
 test.area()
 test.simpleDescription()
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(var name: String) {
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(val name: String) {
     var numberOfSides = 0
 
     open fun simpleDescription() = "A shape with $numberOfSides sides."
 }
 
-class Square(var sideLength: BigDecimal, name: String = "") : NamedShape(name) {
+class Square(var sideLength: BigDecimal, name: String) : NamedShape(name) {
     init {
         numberOfSides = 4
     }
@@ -190,7 +200,7 @@ class Square(var sideLength: BigDecimal, name: String = "") : NamedShape(name) {
     override fun simpleDescription() = "A square with sides of length $sideLength."
 }
 
-var test = Square(BigDecimal("5.2"))
+val test = Square(BigDecimal("5.2"), "square")
 test.area()
 test.simpleDescription()
 </code></pre></div></div></div><div class="case"><div class="name">Checking Type</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var movieCount = 0
@@ -198,9 +208,9 @@ var songCount = 0
 
 for item in library {
     if item is Movie {
-        ++movieCount
+        movieCount += 1
     } else if item is Song {
-        ++songCount
+        songCount += 1
     }
 }</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var movieCount = 0
 var songCount = 0
@@ -212,19 +222,38 @@ for (item in library) {
         ++songCount
     }
 }
-</code></pre></div></div></div><div class="case"><div class="name">Downcasting</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>for object in someObjects {
-    let movie = object as Movie
-    println("Movie: '\(movie.name)', dir. \(movie.director)")
-}</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>for (obj in someObjects) {
-    val movie = obj as Movie
-    println("Movie: '${movie.name}', dir. ${movie.director}")
+</code></pre></div></div></div><div class="case"><div class="name">Pattern Matching</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let nb = 42
+switch nb {
+    case 0...7, 8, 9: print("single digit")
+    case 10: print("double digits")
+    case 11...99: print("double digits")
+    case 100...999: print("triple digits")
+    default: print("four or more digits")
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val nb = 42
+when (nb) {
+    in 0..7, 8, 9 -> println("single digit")
+    10 -> println("double digits")
+    in 11..99 -> println("double digits")
+    in 100..999 -> println("triple digits")
+    else -> println("four or more digits")
+}
+</code></pre></div></div></div><div class="case"><div class="name">Downcasting</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>for current in someObjects {
+    if let movie = current as? Movie {
+        print("Movie: '\(movie.name)', dir. \(movie.director)")
+    }
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>for (current in someObjects) {
+    if (current is Movie) {
+        println("Movie: '${current.name}', dir. ${current.director}")
+    }
 }
 </code></pre></div></div></div><div class="case"><div class="name">Protocol</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>protocol Nameable {
     func name() -> String
 }
 
 func f&lt;T: Nameable>(x: T) {
-    println("Name is " + x.name())
+    print("Name is " + x.name())
 }
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>interface Nameable {
     fun name(): String
@@ -241,10 +270,10 @@ fun f&lt;T: Nameable>(x: T) {
     var ft: Double { return self / 3.28084 }
 }
 let oneInch = 25.4.mm
-println("One inch is \(oneInch) meters")
+print("One inch is \(oneInch) meters")
 // prints "One inch is 0.0254 meters"
 let threeFeet = 3.ft
-println("Three feet is \(threeFeet) meters")
+print("Three feet is \(threeFeet) meters")
 // prints "Three feet is 0.914399970739201 meters"
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val Double.km: Double get() = this * 1000
 val Double.m: Double get() = this
