@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Swift is like Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"></head><body><a target="_blank" href="https://github.com/Nilhcem/swift-is-like-kotlin"><img id="fork-me" src="http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png"></a><div id="note"><b>Swift is like Kotlin</b><br>Shamefully forked from <a href="http://repo.tiye.me/swift-is-like-go/" target="_blank">Swift is like Go</a></div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Hello World</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>print("Hello, world!")
+<!DOCTYPE html><html><head><title>Swift is like Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/highlightjs-github.css"><script src="js/highlight.9.4.0.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><a target="_blank" href="https://github.com/Nilhcem/swift-is-like-kotlin"><img id="fork-me" src="http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png"></a><div id="note"><b>Swift is like Kotlin</b></div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Hello World</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>print("Hello, world!")
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>println("Hello, world!")
 </code></pre></div></div></div><div class="case"><div class="name">Variables And Constants</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
@@ -79,7 +79,8 @@ greet("Bob", "Tuesday")
 greet("Bob", "Tuesday")
 </code></pre></div></div></div><div class="case"><div class="name">Tuple Return</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func getGasPrices() -> (Double, Double, Double) {
     return (3.59, 3.69, 3.79)
-}</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(val a: Double, val b: Double, val c: Double)
+}</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(val a: Double, val b: Double,
+     val c: Double)
 fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)
 </code></pre></div></div></div><div class="case"><div class="name">Variable Number Of Arguments</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>func sumOf(_ numbers: Int...) -> Int {
     var sum = 0
@@ -117,7 +118,7 @@ increment(7)
 val increment = makeIncrementer()
 increment(7)
 
-// makeIncrementer() can also be written in a shorter way:
+// makeIncrementer can also be written in a shorter way:
 fun makeIncrementer() = fun(number: Int) = 1 + number
 </code></pre></div></div></div><div class="case"><div class="name">Map</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>let numbers = [20, 19, 7, 12]
 numbers.map { 3 * $0 }
@@ -143,7 +144,8 @@ area(height = 3, width = 2)
     }
 }</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class Shape {
     var numberOfSides = 0
-    fun simpleDescription() = "A shape with $numberOfSides sides."
+    fun simpleDescription() =
+        "A shape with $numberOfSides sides."
 }
 </code></pre></div></div></div><div class="case"><div class="name">Usage</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>var shape = Shape()
 shape.numberOfSides = 7
@@ -177,7 +179,8 @@ class Square: NamedShape {
     }
 
     override func simpleDescription() -> String {
-        return "A square with sides of length \(sideLength)."
+        return "A square with sides of length " +
+	       sideLength + "."
     }
 }
 
@@ -187,17 +190,20 @@ test.simpleDescription()
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(val name: String) {
     var numberOfSides = 0
 
-    open fun simpleDescription() = "A shape with $numberOfSides sides."
+    open fun simpleDescription() =
+        "A shape with $numberOfSides sides."
 }
 
-class Square(var sideLength: BigDecimal, name: String) : NamedShape(name) {
+class Square(var sideLength: BigDecimal, name: String) :
+        NamedShape(name) {
     init {
         numberOfSides = 4
     }
 
     fun area() = sideLength.pow(2)
 
-    override fun simpleDescription() = "A square with sides of length $sideLength."
+    override fun simpleDescription() =
+        "A square with sides of length $sideLength."
 }
 
 val test = Square(BigDecimal("5.2"), "square")
@@ -240,12 +246,14 @@ when (nb) {
 }
 </code></pre></div></div></div><div class="case"><div class="name">Downcasting</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>for current in someObjects {
     if let movie = current as? Movie {
-        print("Movie: '\(movie.name)', dir. \(movie.director)")
+        print("Movie: '\(movie.name)', " +
+            "dir. \(movie.director)")
     }
 }
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>for (current in someObjects) {
     if (current is Movie) {
-        println("Movie: '${current.name}', dir. ${current.director}")
+        println("Movie: '${current.name}', " +
+	    "dir. ${current.director}")
     }
 }
 </code></pre></div></div></div><div class="case"><div class="name">Protocol</div><div class="pair"><div class="card"><div class="lang">Swift</div><pre class="code"><code>protocol Nameable {
